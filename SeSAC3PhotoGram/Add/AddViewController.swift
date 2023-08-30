@@ -77,10 +77,10 @@ class AddViewController: BaseViewController {
     }
     //37
     @objc func selectImageNotificationObserver(notification: NSNotification) {
-        print("selectImageNotificationObserver")
-        print(notification.userInfo?["name"])
-        print(notification.userInfo?["sample"])
-        print(#function)
+//        print("selectImageNotificationObserver")
+//        print(notification.userInfo?["name"])
+//        print(notification.userInfo?["sample"])
+//        print(#function)
         if let name = notification.userInfo?["name"] as? String {
             mainView.photoImageView.image = UIImage(systemName: name)
         }
@@ -89,13 +89,37 @@ class AddViewController: BaseViewController {
     
     //12
     @objc func searchButtonClicked() {
-//        let alert = UIAlertController(title: "고르세요", message: nil, preferredStyle: .actionSheet)
+        getImageAlert()
         
         //38
         let word = ["Apple", "Banana", "Cookie", "Cake", "Sky"]
         NotificationCenter.default.post(name: NSNotification.Name("RecommandKeyword"), object: nil, userInfo: ["word": word.randomElement()!])
         
-        navigationController?.pushViewController(SearchViewController(), animated: true)
+//        navigationController?.pushViewController(SearchViewController(), animated: true)
+    }
+    
+    //이미지 가져오기 얼럿
+    func getImageAlert() {
+        let alert = UIAlertController(title: "고르세요", message: nil, preferredStyle: .actionSheet)
+        
+        let webSearchButton = UIAlertAction(title: "웹에서 찾기", style: .default) { action in
+            print("웹에서 찾기")
+            UnsplashAPIManager.shared.requestImage(searchBarText: "sky") { image in
+                print("_____")
+            }
+        }
+        
+        let galleryButton = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { action in
+            print("갤러리")
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(webSearchButton)
+        alert.addAction(galleryButton)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true)
     }
     
     //5. override
