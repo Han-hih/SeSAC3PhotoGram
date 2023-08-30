@@ -10,16 +10,15 @@ import UIKit
 //10
 class SearchViewController: BaseViewController {
 //11
-//    let searchBar = {
-//        let view = UISearchBar()
-//        view.placeholder = "검색어를 입력해주세요"
-//        return view
-//    }()
+    let searchBar = {
+        let view = UISearchBar()
+        view.placeholder = "검색어를 입력해주세요"
+        return view
+    }()
     //23
     let mainView = SearchView()
-    
     //34
-    let imageList = ["pencil", "star", "person", "star.fill", "xmark", "person.circle"]
+    var imageList = ["1"]
 
     
     var delegate: PassImageDelegate?
@@ -31,8 +30,12 @@ class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         //addObservier보다 post가 먼저 신호를 보내면 addObserver가 신호를 받지 못한다.
         // post와 addobserver 순서
+        
         //39
         NotificationCenter.default.addObserver(self, selector: #selector(recommandKeywordNotificationObserver(notification:)), name: NSNotification.Name("RecommandKeyword"), object: nil)
         
@@ -42,6 +45,19 @@ class SearchViewController: BaseViewController {
         
     }
     
+    func imageRequest(searchText: String) {
+        UnsplashAPIManager.shared.requestImage(searchBarText: searchText) { response in
+            print(response.results)
+            for item in response.results {
+                let url = item.urls.regular
+                print(url)
+//                self.imageList.append()
+            }
+            DispatchQueue.main.async {
+//                self.collectionView.reloadData()
+            }
+        }
+    }
     
     //39
     @objc func recommandKeywordNotificationObserver(notification: NSNotification) {
@@ -73,6 +89,8 @@ class SearchViewController: BaseViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else { return}
+        imageRequest(searchText: searchText)
         mainView.searchBar.resignFirstResponder() // 사용자의 포커스가 서치바에 없다.
     }
 }
