@@ -18,11 +18,11 @@ class APIService {
         let request = URLRequest(url: url!)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
-            print(data)
+//            print(data)
             let value = String(data: data!, encoding: .utf8)
-            print(value)
-            print(response)
-            print(error)
+//            print(value)
+//            print(response)
+//            print(error)
         }.resume() //꼭 작성해야한다
     }
     

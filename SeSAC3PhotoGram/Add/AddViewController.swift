@@ -104,9 +104,12 @@ class AddViewController: BaseViewController {
         
         let webSearchButton = UIAlertAction(title: "웹에서 찾기", style: .default) { action in
             print("웹에서 찾기")
-            UnsplashAPIManager.shared.requestImage(searchBarText: "sky") { image in
-                print("_____")
-            }
+            let vc = SearchViewController()
+//            UnsplashAPIManager.shared.requestImage(searchBarText: "sky") { image in
+//                print("_____")}
+                self.present(vc, animated: true)
+                
+            
         }
         
         let galleryButton = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { action in
