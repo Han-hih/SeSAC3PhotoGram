@@ -18,7 +18,7 @@ class UnsplashAPIManager {
     
     func requestImage(searchBarText: String, completion: @escaping (Image) -> Void) {
         guard let imageURL = URL(string: ImageApi.requestURL + "\(searchBarText)" + ImageApi.clientParam + APIKey.unsplashKey) else { return }
-        print(imageURL)
+//        print(imageURL)
         
         let successRange = 200...299
         
@@ -30,7 +30,7 @@ class UnsplashAPIManager {
             print(statusCode)
             
             guard let imageData = data else { return }
-            print(imageData)
+//            print(imageData)
             do {
                 let response = try JSONDecoder().decode(Image.self, from: imageData)
                 completion(response)
@@ -39,7 +39,6 @@ class UnsplashAPIManager {
                 print(error)
             }
             
-            print("ERRRRRROR")
         }.resume()
         
         

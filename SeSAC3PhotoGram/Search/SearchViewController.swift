@@ -18,7 +18,7 @@ class SearchViewController: BaseViewController {
     //23
     let mainView = SearchView()
     //34
-    var imageList = ["1"]
+    var imageList: [String] = []
 
     
     var delegate: PassImageDelegate?
@@ -47,14 +47,16 @@ class SearchViewController: BaseViewController {
     
     func imageRequest(searchText: String) {
         UnsplashAPIManager.shared.requestImage(searchBarText: searchText) { response in
-            print(response.results)
+//            print(response.results)
+            self.imageList.removeAll()
             for item in response.results {
                 let url = item.urls.regular
-                print(url)
+                self.imageList.append(url)
+                print(self.imageList,"2222222222 ")
 //                self.imageList.append()
             }
             DispatchQueue.main.async {
-//                self.collectionView.reloadData()
+                self.mainView.collectionView.reloadData()
             }
         }
     }
@@ -98,13 +100,15 @@ extension SearchViewController: UISearchBarDelegate {
 //32
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(imageList.count,"ddddddd")
         return imageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.imageView.image = UIImage(systemName: imageList[indexPath.item])
+        let url = URL(string: imageList[indexPath.item])
+            
+        cell.imageView.load(url: url!)
         
         return cell
     }
@@ -112,10 +116,10 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     //35
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(imageList[indexPath.item])
+//        print(imageList[indexPath.item])
         
         //protocol
-        delegate?.receiveImage(image: UIImage(systemName: imageList[indexPath.row])!)
+//        delegate?.receiveImage.(image: )
         
         //36 notification을 통한 값전달
       //  NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item],"sample": "고래밥"])
@@ -125,5 +129,16 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
 }
 
-
-
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}

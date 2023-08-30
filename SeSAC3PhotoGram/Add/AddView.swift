@@ -11,7 +11,7 @@ import UIKit
 class AddView: BaseView {
     
     //17
-    let photoImageView = {
+    lazy var photoImageView = {
            let view = UIImageView()
            view.backgroundColor = .lightGray
            view.contentMode = .scaleAspectFill

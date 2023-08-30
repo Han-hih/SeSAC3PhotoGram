@@ -14,7 +14,7 @@ protocol PassDataDelegate {
 }
 
 protocol PassImageDelegate {
-    func receiveImage(image: UIImage)
+    func receiveImage(image: UIImageView)
 }
 
 //Main과 Detail은 지양하는게 좋다.(여러뷰컨이 생기면 복잡해진다)
@@ -200,7 +200,7 @@ extension AddViewController: PassDataDelegate {
 }
 
 extension AddViewController: PassImageDelegate {
-    func receiveImage(image: UIImage) {
-        mainView.photoImageView.image = image
+    func receiveImage(image: UIImageView) {
+        mainView.photoImageView = image
     }
 }
