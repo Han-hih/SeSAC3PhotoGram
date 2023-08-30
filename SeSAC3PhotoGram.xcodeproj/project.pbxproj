@@ -31,6 +31,11 @@
 		80BECFFA2A9DC75800C43978 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BECFF92A9DC75800C43978 /* WebViewController.swift */; };
 		80D5F2132A9EC74500E18002 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F2122A9EC74500E18002 /* APIService.swift */; };
 		80D5F2152A9EEBDC00E18002 /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F2142A9EEBDC00E18002 /* URLSessionViewController.swift */; };
+		80D5F2182A9F1B7400E18002 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 80D5F2172A9F1B7400E18002 /* .gitignore */; };
+		80D5F21A2A9F1BBA00E18002 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F2192A9F1BBA00E18002 /* APIKey.swift */; };
+		80D5F21C2A9F1C3300E18002 /* UnsplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F21B2A9F1C3300E18002 /* UnsplashAPIManager.swift */; };
+		80D5F21E2A9F209B00E18002 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F21D2A9F209B00E18002 /* Image.swift */; };
+		80D5F2202A9F275400E18002 /* imageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F21F2A9F275400E18002 /* imageURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,11 @@
 		80BECFF92A9DC75800C43978 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		80D5F2122A9EC74500E18002 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		80D5F2142A9EEBDC00E18002 /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
+		80D5F2172A9F1B7400E18002 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		80D5F2192A9F1BBA00E18002 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		80D5F21B2A9F1C3300E18002 /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
+		80D5F21D2A9F209B00E18002 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		80D5F21F2A9F275400E18002 /* imageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +145,8 @@
 				80BECF892A9C1D5C00C43978 /* Assets.xcassets */,
 				80BECF8B2A9C1D5C00C43978 /* LaunchScreen.storyboard */,
 				80BECF8E2A9C1D5C00C43978 /* Info.plist */,
+				80D5F2172A9F1B7400E18002 /* .gitignore */,
+				80D5F2192A9F1BBA00E18002 /* APIKey.swift */,
 				80BECFF92A9DC75800C43978 /* WebViewController.swift */,
 			);
 			path = SeSAC3PhotoGram;
@@ -203,6 +215,9 @@
 			children = (
 				80D5F2122A9EC74500E18002 /* APIService.swift */,
 				80D5F2142A9EEBDC00E18002 /* URLSessionViewController.swift */,
+				80D5F21D2A9F209B00E18002 /* Image.swift */,
+				80D5F21B2A9F1C3300E18002 /* UnsplashAPIManager.swift */,
+				80D5F21F2A9F275400E18002 /* imageURL.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -296,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80BECF8D2A9C1D5C00C43978 /* LaunchScreen.storyboard in Resources */,
+				80D5F2182A9F1B7400E18002 /* .gitignore in Resources */,
 				80BECF8A2A9C1D5C00C43978 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,18 +325,22 @@
 			files = (
 				80BECFAF2A9D7BEB00C43978 /* Notification+Extension.swift in Sources */,
 				80BECFA12A9C2FFB00C43978 /* AddView.swift in Sources */,
+				80D5F21C2A9F1C3300E18002 /* UnsplashAPIManager.swift in Sources */,
 				80BECFF82A9DBB0200C43978 /* CompletionViewController.swift in Sources */,
 				80BECF9C2A9C274E00C43978 /* SearchViewController.swift in Sources */,
+				80D5F2202A9F275400E18002 /* imageURL.swift in Sources */,
 				80BECFA52A9C365F00C43978 /* BaseCollectionViewCell.swift in Sources */,
 				80BECF852A9C1D5B00C43978 /* AddViewController.swift in Sources */,
 				80BECFB32A9D7DC900C43978 /* DateViewController.swift in Sources */,
 				80BECF992A9C244300C43978 /* BaseViewController.swift in Sources */,
+				80D5F21E2A9F209B00E18002 /* Image.swift in Sources */,
 				80BECFB12A9D7C7900C43978 /* DateView.swift in Sources */,
 				80BECFA32A9C337600C43978 /* SearchView.swift in Sources */,
 				80D5F2152A9EEBDC00E18002 /* URLSessionViewController.swift in Sources */,
 				80BECF9E2A9C2EBA00C43978 /* BaseView.swift in Sources */,
 				80BECFB72A9D8E8800C43978 /* DateFormatter+Extension.swift in Sources */,
 				80BECFFA2A9DC75800C43978 /* WebViewController.swift in Sources */,
+				80D5F21A2A9F1BBA00E18002 /* APIKey.swift in Sources */,
 				80BECF812A9C1D5B00C43978 /* AppDelegate.swift in Sources */,
 				80BECF832A9C1D5B00C43978 /* SceneDelegate.swift in Sources */,
 				80BECFA72A9C37F800C43978 /* SearchCollectionCell.swift in Sources */,
