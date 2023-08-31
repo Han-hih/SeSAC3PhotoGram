@@ -36,6 +36,8 @@
 		80D5F21C2A9F1C3300E18002 /* UnsplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F21B2A9F1C3300E18002 /* UnsplashAPIManager.swift */; };
 		80D5F21E2A9F209B00E18002 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F21D2A9F209B00E18002 /* Image.swift */; };
 		80D5F2202A9F275400E18002 /* imageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F21F2A9F275400E18002 /* imageURL.swift */; };
+		80D5F2232AA01A7800E18002 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F2222AA01A7800E18002 /* HomeViewController.swift */; };
+		80D5F2252AA01A8100E18002 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5F2242AA01A8100E18002 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		80D5F21B2A9F1C3300E18002 /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
 		80D5F21D2A9F209B00E18002 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		80D5F21F2A9F275400E18002 /* imageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageURL.swift; sourceTree = "<group>"; };
+		80D5F2222AA01A7800E18002 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		80D5F2242AA01A8100E18002 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 		80BECF7F2A9C1D5B00C43978 /* SeSAC3PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				80D5F2212AA01A5500E18002 /* Home */,
 				80D5F2112A9EC72C00E18002 /* Network */,
 				80BECFAD2A9D7BD400C43978 /* Extension */,
 				80BECF9F2A9C2FC400C43978 /* Add */,
@@ -220,6 +225,15 @@
 				80D5F21F2A9F275400E18002 /* imageURL.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		80D5F2212AA01A5500E18002 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				80D5F2222AA01A7800E18002 /* HomeViewController.swift */,
+				80D5F2242AA01A8100E18002 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +340,7 @@
 				80BECFAF2A9D7BEB00C43978 /* Notification+Extension.swift in Sources */,
 				80BECFA12A9C2FFB00C43978 /* AddView.swift in Sources */,
 				80D5F21C2A9F1C3300E18002 /* UnsplashAPIManager.swift in Sources */,
+				80D5F2252AA01A8100E18002 /* HomeView.swift in Sources */,
 				80BECFF82A9DBB0200C43978 /* CompletionViewController.swift in Sources */,
 				80BECF9C2A9C274E00C43978 /* SearchViewController.swift in Sources */,
 				80D5F2202A9F275400E18002 /* imageURL.swift in Sources */,
@@ -334,6 +349,7 @@
 				80BECFB32A9D7DC900C43978 /* DateViewController.swift in Sources */,
 				80BECF992A9C244300C43978 /* BaseViewController.swift in Sources */,
 				80D5F21E2A9F209B00E18002 /* Image.swift in Sources */,
+				80D5F2232AA01A7800E18002 /* HomeViewController.swift in Sources */,
 				80BECFB12A9D7C7900C43978 /* DateView.swift in Sources */,
 				80BECFA32A9C337600C43978 /* SearchView.swift in Sources */,
 				80D5F2152A9EEBDC00E18002 /* URLSessionViewController.swift in Sources */,

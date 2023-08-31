@@ -27,6 +27,10 @@ class TitleViewController: BaseViewController {
         
     }
     
+    deinit {
+        print("deinit", self)
+    }
+    
     @objc func doneButtonClicked() {
         completionHandler?(textField.text!, 77, false)
         navigationController?.popViewController(animated: true)

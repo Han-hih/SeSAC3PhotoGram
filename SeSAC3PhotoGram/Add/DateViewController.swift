@@ -15,13 +15,13 @@ class DateViewController: UIViewController {
     var delegate: PassDataDelegate?
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
     override func loadView() {
         
         self.view = mainView
+    }
+    
+    deinit {
+        print("deinit", self)
     }
     // protocol 값 전달 3.
     override func viewDidDisappear(_ animated: Bool) {

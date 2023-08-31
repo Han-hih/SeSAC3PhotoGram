@@ -14,7 +14,7 @@ protocol PassDataDelegate {
 }
 
 protocol PassImageDelegate {
-    func receiveImage(image: UIImageView)
+    func receiveImage(image: String)
 }
 
 //Main과 Detail은 지양하는게 좋다.(여러뷰컨이 생기면 복잡해진다)
@@ -60,6 +60,10 @@ class AddViewController: BaseViewController {
         //12
         
 //        mainView.searchButton.addTarget(self, action: #selector(searchButtonClicked), for: .touchUpInside)
+    }
+    
+    deinit {
+        print("deinit", self)
     }
     
     //여러번 띄우려면 화면을 띄우는 방식을 바꿔준다.
@@ -173,8 +177,10 @@ class AddViewController: BaseViewController {
     
     @objc func dateButtonClicked() {
         //protocol값전달 5. delgate.self
-        let vc = DateViewController()
-        vc.delegate = self
+//        let vc = DateViewController()
+//        vc.delegate = self
+//        navigationController?.pushViewController(vc, animated: true)
+        let vc = HomeViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -200,7 +206,21 @@ extension AddViewController: PassDataDelegate {
 }
 
 extension AddViewController: PassImageDelegate {
-    func receiveImage(image: UIImageView) {
-        mainView.photoImageView = image
+    func receiveImage(image: String) {
+//        mainView.photoImageView.image = UIImage(cgImage: )
+        
+    }
+}
+extension UIImageView {
+    func receive(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
     }
 }

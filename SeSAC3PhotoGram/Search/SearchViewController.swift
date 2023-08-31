@@ -119,6 +119,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
 //        print(imageList[indexPath.item])
         
         //protocol
+//        guard let url = imageList[indexPath.item] else { return }
 //        delegate?.receiveImage.(image: )
         
         //36 notification을 통한 값전달
