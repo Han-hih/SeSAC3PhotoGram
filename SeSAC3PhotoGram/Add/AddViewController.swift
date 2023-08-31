@@ -111,6 +111,8 @@ class AddViewController: BaseViewController {
             let vc = SearchViewController()
 //            UnsplashAPIManager.shared.requestImage(searchBarText: "sky") { image in
 //                print("_____")}
+            vc.delegate = self
+            
                 self.present(vc, animated: true)
                 
             
@@ -171,7 +173,7 @@ class AddViewController: BaseViewController {
     
     @objc func searchProtocolButtonClicked() {
         let vc = SearchViewController()
-        vc.delegate = self
+//        vc.delegate = self
         present(vc, animated: true)
     }
     
@@ -201,16 +203,19 @@ class AddViewController: BaseViewController {
 // protocol 값 전달 4.
 extension AddViewController: PassDataDelegate {
     func receiveDate(date: Date) {
+        print(date)
         mainView.dateButton.setTitle(DateFormatter.convertDate(date: date), for: .normal)
     }
 }
 
 extension AddViewController: PassImageDelegate {
     func receiveImage(image: String) {
-//        mainView.photoImageView.image = UIImage(cgImage: )
+        print(image, "_____________________")
+        mainView.photoImageView.receive(url: URL(string: image)!)
         
     }
 }
+
 extension UIImageView {
     func receive(url: URL) {
         DispatchQueue.global().async { [weak self] in

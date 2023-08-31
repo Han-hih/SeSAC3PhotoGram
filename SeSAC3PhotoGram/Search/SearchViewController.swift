@@ -21,7 +21,7 @@ class SearchViewController: BaseViewController {
     var imageList: [String] = []
 
     
-    var delegate: PassImageDelegate?
+   var delegate: PassImageDelegate?
     //24
     override func loadView() {
         self.view = mainView
@@ -52,7 +52,7 @@ class SearchViewController: BaseViewController {
             for item in response.results {
                 let url = item.urls.regular
                 self.imageList.append(url)
-                print(self.imageList,"2222222222 ")
+//                print(self.imageList,"2222222222 ")
 //                self.imageList.append()
             }
             DispatchQueue.main.async {
@@ -91,7 +91,7 @@ class SearchViewController: BaseViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = searchBar.text else { return}
+        guard let searchText = searchBar.text else { return }
         imageRequest(searchText: searchText)
         mainView.searchBar.resignFirstResponder() // 사용자의 포커스가 서치바에 없다.
     }
@@ -119,8 +119,10 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
 //        print(imageList[indexPath.item])
         
         //protocol
-//        guard let url = imageList[indexPath.item] else { return }
-//        delegate?.receiveImage.(image: )
+         let url = imageList[indexPath.item]
+        print(url)
+        delegate?.receiveImage(image: url)
+        
         
         //36 notification을 통한 값전달
       //  NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item],"sample": "고래밥"])
