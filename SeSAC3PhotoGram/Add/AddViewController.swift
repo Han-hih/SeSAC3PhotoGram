@@ -17,6 +17,10 @@ protocol PassImageDelegate {
     func receiveImage(image: String)
 }
 
+protocol PassGalleryImageDelegate {
+    func receiveGalleryImage(image: UIImage)
+}
+
 //Main과 Detail은 지양하는게 좋다.(여러뷰컨이 생기면 복잡해진다)
 
 //4. uiviewcontroller를 Baseviewcontroller로 바꿔준다.
@@ -120,6 +124,9 @@ class AddViewController: BaseViewController {
         
         let galleryButton = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { action in
             print("갤러리")
+            let vc = GalleryViewController()
+            vc.delegate = self
+            self.present(vc, animated: true)
         }
         
         let cancel = UIAlertAction(title: "취소", style: .cancel)
@@ -130,7 +137,7 @@ class AddViewController: BaseViewController {
         
         present(alert, animated: true)
     }
-    
+   
     //5. override
 //2 configure, setconstraints
     override func configureView() {
@@ -213,6 +220,11 @@ extension AddViewController: PassImageDelegate {
         print(image, "_____________________")
         mainView.photoImageView.receive(url: URL(string: image)!)
         
+    }
+}
+extension AddViewController: PassGalleryImageDelegate {
+    func receiveGalleryImage(image: UIImage) {
+        mainView.photoImageView.image = image
     }
 }
 

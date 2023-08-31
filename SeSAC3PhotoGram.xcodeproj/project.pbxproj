@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		806C29752AA0BC7600FA5029 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C29742AA0BC7600FA5029 /* GalleryViewController.swift */; };
 		80BECF812A9C1D5B00C43978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BECF802A9C1D5B00C43978 /* AppDelegate.swift */; };
 		80BECF832A9C1D5B00C43978 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BECF822A9C1D5B00C43978 /* SceneDelegate.swift */; };
 		80BECF852A9C1D5B00C43978 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BECF842A9C1D5B00C43978 /* AddViewController.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		806C29742AA0BC7600FA5029 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		80BECF7D2A9C1D5B00C43978 /* SeSAC3PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BECF802A9C1D5B00C43978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80BECF822A9C1D5B00C43978 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				80D5F21D2A9F209B00E18002 /* Image.swift */,
 				80D5F21B2A9F1C3300E18002 /* UnsplashAPIManager.swift */,
 				80D5F21F2A9F275400E18002 /* imageURL.swift */,
+				806C29742AA0BC7600FA5029 /* GalleryViewController.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				80D5F21C2A9F1C3300E18002 /* UnsplashAPIManager.swift in Sources */,
 				80D5F2252AA01A8100E18002 /* HomeView.swift in Sources */,
 				80BECFF82A9DBB0200C43978 /* CompletionViewController.swift in Sources */,
+				806C29752AA0BC7600FA5029 /* GalleryViewController.swift in Sources */,
 				80BECF9C2A9C274E00C43978 /* SearchViewController.swift in Sources */,
 				80D5F2202A9F275400E18002 /* imageURL.swift in Sources */,
 				80BECFA52A9C365F00C43978 /* BaseCollectionViewCell.swift in Sources */,
