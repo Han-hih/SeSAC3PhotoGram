@@ -52,7 +52,7 @@ class AddViewController: BaseViewController {
         ClassOpenExample.publicExample()
         ClassPublicExample.publicExample()
 //        ClassInternalExample.internalExample()
-        APIService.shared.callRequest()
+//        APIService.shared.callRequest(query: "sky")
         
         //37
         
@@ -154,7 +154,7 @@ class AddViewController: BaseViewController {
         mainView.completionButton.addTarget(self, action: #selector(completionButtonClicked), for: .touchUpInside)
         
         
-        APIService.shared.callRequest()
+//        APIService.shared.callRequest()
         
         
     }
